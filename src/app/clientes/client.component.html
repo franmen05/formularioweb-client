@@ -1,0 +1,41 @@
+<div class="card border-primary mb-3">
+  <div class="card-header">Clientes</div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">Listado de clientes</h5>
+
+    <div class= "my-2">
+<!--      <button class="btn btn-rounded btn-primary"  type="button" [routerLink]="['/clientes/form']">crear cliente</button>-->
+    </div>
+
+    <table class="table table-bordered table-striped" *ngIf="clientes?.length>0 else nodata">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Fecha</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>{{ cliente.id }}</td>
+        <td>{{ cliente.name }}</td>
+        <td>{{ cliente.lastName }}</td>
+        <td>{{ cliente.email }}</td>
+        <td>{{ cliente.createAt }}</td>
+        <td>
+<!--          <button class="btn btn-rounded btn-primary"  type="button" [routerLink]="['/clientes/form/',cliente.id]">Editar </button>-->
+          <button class="mx-1 btn btn-rounded btn-danger"  type="button" (click)="delete(cliente)">eliminar </button></td>
+      </tr>
+      </tbody>
+    </table>
+    <ng-template #nodata>
+      <div class="alert-info">
+        No hay registros
+      </div>
+    </ng-template>
+
+  </div>
+</div>

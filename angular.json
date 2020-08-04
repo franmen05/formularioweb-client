@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ColegioWeb"
+    }
+  },
+  "defaultProject": "ColegioWeb",
+  "cli": {
+    "analytics": false
+  }
 }
